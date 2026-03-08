@@ -257,7 +257,7 @@
      });
    } else {
      // tr +=
-     rows = `<tr><td colspan="4" align="center">No Records Found</td></tr>`;
+     rows = `<tr><td colspan="9" align="center">No Records Found</td></tr>`;
    }
 
    productdata.innerHTML = rows;

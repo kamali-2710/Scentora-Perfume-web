@@ -184,7 +184,7 @@
                   </tr>`;
           });
         } else {
-          tab = `<tr><td colspan="4" align="center">No Records Found</td></tr>`;
+          tab = `<tr><td colspan="5" align="center">No Records Found</td></tr>`;
         }
 
         data1.innerHTML = tab;
