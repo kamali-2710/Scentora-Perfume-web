@@ -71,7 +71,7 @@ a {
   font-weight: 500;
   font-size: 1.1rem;
 }
-span {
+nav span {
   /* border: 1px solid; */
   background-color: black;
   height: 15px;
@@ -198,10 +198,6 @@ header .fa-bars {
   border-radius: 5px;
   transition: 0.4s;
 }
-.scroll .catgry:hover {
-  border: 4px solid #c9a24d;
-  border-radius: 30px;
-}
 .catgry img {
   height: 100%;
   width: 100%;
@@ -255,7 +251,7 @@ header .fa-bars {
   color: #3d2315;
 }
 
-/* .......... */
+/* ....card...... */
 
 .card {
   position: relative;
@@ -322,7 +318,7 @@ header .fa-bars {
   /* border: 2px solid #c9a24d; */
   transition: 0.3s;
   width: 300px;
-  height: 400px;
+  /* height: 400px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -336,7 +332,7 @@ header .fa-bars {
 }
 .card .offer {
   /* border: 1px solid; */
-  width: 60px;
+  width: 65px;
   padding: 5px 7px;
   margin-right: 240px;
   background-color: #c9a24d;
@@ -347,10 +343,10 @@ header .fa-bars {
 }
 .card img {
   /* border: 1px solid; */
-  height: 60%;
-  width: 50%;
-  cursor: pointer;
+   width: 150px;
+  height: 180px;
   object-fit: cover;
+  cursor: pointer;
   transition: 0.4s;
 }
 .card img:hover,
@@ -362,7 +358,7 @@ header .fa-bars {
   text-align: center;
   font-size: 1rem;
   font-weight: 500;
-  padding: 10px;
+  padding: 30px;
 }
 
 .card p {
@@ -383,7 +379,7 @@ header .fa-bars {
 }
 .card h2 {
   /* border: 1px solid; */
-  width: 64px;
+  width: 69px;
   font-size: 0.9rem;
   color: #3d2315;
 }

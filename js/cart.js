@@ -26,7 +26,6 @@
        "</div>" +
        '<div class="cart-details">' +
        '<div class="top-icons">' +
-       '<i class="fa-regular fa-heart"></i>' +
        '<i class="fa-solid fa-x" onclick="removeItem(' +
        item.id +
        ')"></i>' +
@@ -126,6 +125,7 @@
        icon: "warning",
        title: "Cart is Empty!",
        text: "Please add items to cart",
+       confirmButtonColor: "#c9a24d"
      });
      return;
    }
@@ -134,7 +134,9 @@
      icon: "success",
      title: "Payment Successful!",
      text: "Your order has been placed successfully 🎉",
-     confirmButtonText: "OK"
+     confirmButtonText: "OK",
+     confirmButtonColor: "#c9a24d"
+     
    }).then(() => {
      localStorage.removeItem("cart");
      window.location.href = "home.html";

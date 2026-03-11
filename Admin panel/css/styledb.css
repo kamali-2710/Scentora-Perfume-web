@@ -10,7 +10,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 250px auto;
-  transition: .5s;
+  transition: 0.5s;
   grid-template-areas:
     "aside header"
     "aside main" "aside footer";
@@ -54,7 +54,7 @@ header .timer {
 }
 
 aside {
-  border-right: 1px solid #444452;
+  /* border-right: 1px solid #444452; */
   width: 250px;
   grid-area: aside;
   display: flex;
@@ -65,7 +65,7 @@ aside {
   background-size: cover;
   color: rgba(255, 255, 255, 0.792);
   background-position: center;
-  transition: .5s;
+  transition: 0.5s;
 }
 aside .profile {
   /* border: 1px solid red; */
@@ -114,12 +114,6 @@ ul li:hover {
   box-shadow: 0px 0px 20px #7968d9;
   border-radius: 5px;
 }
-aside .icons {
-  /* border: 1px solid; */
-  margin-top: 300px;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
 
 aside.hide {
   /* border: 1px solid; */
@@ -127,16 +121,22 @@ aside.hide {
 }
 aside.hide .profile,
 aside.hide h3,
-aside.hide ul li span{
+aside.hide ul li span {
   display: none;
 }
-aside.hide .icons {
-  /* border: 1px solid peru; */
-  margin-top: 100px;
+aside .icons {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-top: auto;
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
   gap: 15px;
-  margin-top: 350px;
+  justify-content: center;
+}
+
+aside.hide .icons {
+  flex-direction: column;
+  align-items: center;
 }
 aside.hide ul li {
   /* border: 1px solid red; */
@@ -144,20 +144,20 @@ aside.hide ul li {
   text-align: center;
 }
 .wrapper.hide-sidebar {
-  /* border: 1px solid green; */
+  /* border: 2px solid green; */
   grid-template-columns: 60px 1fr;
 }
 
 aside .icons a {
   color: rgba(255, 255, 255, 0.792);
 }
+aside .icons .fa-brands {
+  transition: 0.1s;
+}
 
 aside .icons .fa-brands:hover {
-  /* box-shadow: 0px 0px 10px #7968d9; */
   border-radius: 20px;
   padding: 2px;
-  box-shadow: 0px 0px 8px #cfccdc;
-  background-color: #415497;
   transform: scale(1.3);
 }
 main {
@@ -177,7 +177,7 @@ main h3 {
   color: rgba(255, 255, 255, 0.792);
 }
 .main-box {
-  /* border: 1px solid white; */
+  /* border: 2px solid white; */
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
@@ -186,7 +186,9 @@ main h3 {
   transform: scale(1.1);
 } */
 h2 {
-  margin-left: 10px;
+  /* border:1px solid; */
+  margin-left: 15px;
+  margin-top: 16px;
 }
 .main-box .box {
   border: 1px solid;
@@ -209,31 +211,32 @@ h2 {
   /* padding: 15x 0px; */
   margin-left: 8px;
 }
-.fa-arrow-right-long{
+.fa-arrow-right-long {
   border: 1px solid;
 }
-.moreinfo{
+.moreinfo {
   /* border: 1px solid; */
   display: flex;
   justify-content: center;
-  align-items: center; 
-  width: 98%;
-  margin-top: 35px;
+  align-items: center;
+  width: 100%;
+  margin-top: 43px;
+  border-radius: 8px;
   box-shadow: 5px 3px 7px rgba(41, 38, 38, 0.539);
-  background:linear-gradient( to left, #5344b4,#7968d9);
-  transition: .8s;
+  background: linear-gradient(to top left, #5344b4, rgb(213, 236, 241));
+  transition: 0.8s;
   padding: 15px;
-} 
-.moreinfo:hover{
-  background:linear-gradient( to right, #5344b4,#33267e);
 }
-.moreinfo a{
+.moreinfo:hover {
+ background: linear-gradient(to bottom right, #5344b4, rgb(222, 190, 220));
+}
+.moreinfo a {
   text-decoration: none;
   color: white;
   font-size: 0.9rem;
-   margin: -2px 2px;
+  margin: -2px 2px;
 }
-.box .card-icon{
+.box .card-icon {
   /* border: 1px solid; */
   width: 100px;
   font-size: 2.5rem;
@@ -297,10 +300,10 @@ footer p {
   header {
     height: 100px;
   }
-   aside ul{
-     /* border: 1px solid; */
-     height: 38%;
-   }
+  aside ul {
+    /* border: 1px solid; */
+    height: 38%;
+  }
   aside ul li {
     /* border: 1px solid; */
     width: 150px;
@@ -309,6 +312,7 @@ footer p {
   }
 
   aside .icons {
+    /* border: 2px solid; */
     /* margin-top: 550px; */
     display: flex;
     gap: 10px;
@@ -326,7 +330,6 @@ footer p {
 }
 
 @media (max-width: 576px) {
-
   .wrapper {
     grid-template-columns: 60px 1fr;
   }
@@ -386,9 +389,9 @@ footer p {
   main {
     padding: 10px;
   }
- h2{
-  font-size: 1.4rem;
- }
+  h2 {
+    font-size: 1.4rem;
+  }
   main h3 {
     font-size: 1.1rem;
     margin: 10px 0 20px;
@@ -417,8 +420,7 @@ footer p {
   }
 
   footer p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-align: center;
-    margin-top: 5px;
   }
 }

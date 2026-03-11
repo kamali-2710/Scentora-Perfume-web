@@ -67,6 +67,7 @@
 
    hour.innerHTML = String(h).padStart(2, "0");
    sec.innerHTML = String(s).padStart(2, "0");
+   min.innerHTML = String(m).padStart(2, "0");
    Time.innerHTML = period;
  }, 1000);
 

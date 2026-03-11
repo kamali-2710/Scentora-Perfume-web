@@ -73,31 +73,13 @@
       //localstorage
 
       let categorycreate = () => {
-        let image = document.getElementById("img")
         let category = document.getElementById("catgry").value;
 
         let catgryerr = document.getElementById("catgryerr");
-        let imageerr = document.getElementById("imgerr");
-
-        // let imgPattern = /^(https?:\/\/.*\.(png|jpg|jpeg|gif|webp))$/i;
+    
         let catPattern = /^[a-zA-Z0-9 &.,-]{3,30}$/;
         const nameRegex = /^[A-Za-z\s]+$/;
         let ischecked = true;
-
-        if (image.value == "") {
-          imageerr.innerText = "Enter valid image URL";
-          img.style.border = "1px solid red";
-          ischecked = false;
-        } 
-        // else if (!imgPattern.test(image)) {
-        //   imageerr.innerText = "Invalid URL";
-        //   img.style.border = "1px solid red";
-        //   ischecked = false;
-        // }
-         else {
-          imageerr.innerText = "";
-          img.style.border = "";
-        }
 
         if (category == "") {
           catgryerr.innerText = "Enter your Category";
@@ -124,8 +106,7 @@
         let match = categoryList.filter(
           //existing user duplicate check
           (ele) =>
-            ele.category.toLowerCase() === category.toLowerCase() &&
-            ele.image === image,
+            ele.category.toLowerCase() === category.toLowerCase() 
         );
 
         if (match.length > 0) {
@@ -140,7 +121,6 @@
         if (ischecked) {
           let ctydata = {
             productid: Date.now(),
-            image,
             category,
           };
 
@@ -156,7 +136,6 @@
 
           categorytable();
           document.getElementById("catgry").value = "";
-          document.getElementById("img").value = ""; //reset
         }
       };
       //table
@@ -171,7 +150,6 @@
             tab += `<tr>
                     <td>${index + 1}</td>
                     <td>${b.productid}</td>
-                    <td><img src="${b.image}" alt="${b.category}"/></td>
                     <td>${b.category}</td>
                     <td>
                       <button type="button" onclick="catgyupdate(${b.productid})" id="updatebtn">
@@ -202,7 +180,6 @@
         let [product] = fpl;
 
         document.getElementById("categoryid").value = product.productid;
-        document.getElementById("img").value = product.image;
         document.getElementById("catgry").value = product.category;
 
         document.getElementById("submitbtn").style.display = "none";
@@ -212,10 +189,9 @@
       // update save
       let updateData = () => {
         let cid = document.getElementById("categoryid").value;
-        let image = document.getElementById("img").value;
         let category = document.getElementById("catgry").value;
 
-        if (image == "" || category == "") {
+        if (category == "") {
           Swal.fire("Error", "category all fields before updating", "error");
           return; //Check empty fields stop submit & update
         }
@@ -225,7 +201,6 @@
         let catgyData = {
           productid: Number(cid),
           category: category,
-          image: image,
         };
 
         let updatedList = categoryList.map((ele) => {
@@ -248,7 +223,6 @@
         categorytable();
 
         document.getElementById("categoryid").value = "";
-        document.getElementById("img").value = "";
         document.getElementById("catgry").value = "";
 
         document.getElementById("submitbtn").style.display = "inline-block";
