@@ -22,7 +22,7 @@
             });
 
             setTimeout(() => {
-              window.location.href = "/index.html";
+              window.location.href = "/Scentora website/index.html";
             }, 2000);
           }
         });
