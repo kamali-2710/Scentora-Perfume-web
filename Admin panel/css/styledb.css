@@ -223,12 +223,12 @@ h2 {
   margin-top: 43px;
   border-radius: 8px;
   box-shadow: 5px 3px 7px rgba(41, 38, 38, 0.539);
-  background: linear-gradient(to top left, #5344b4, rgb(213, 236, 241));
+  background:linear-gradient( to left, #5344b4,#7968d9);
   transition: 0.8s;
   padding: 15px;
 }
 .moreinfo:hover {
- background: linear-gradient(to bottom right, #5344b4, rgb(222, 190, 220));
+ background: linear-gradient(to bottom right, #5344b4, rgb(125, 75, 196));
 }
 .moreinfo a {
   text-decoration: none;
